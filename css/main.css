@@ -1,0 +1,75 @@
+body * {
+	box-sizing: border-box;
+}
+#slideshow {
+	width: 30vw;
+	height: calc(30vw * 3 / 4);
+	/* border: 1px solid black; */
+	opacity: 1;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.bg-controller,
+.bg-select-container {
+	display: flex;
+	width: inherit;
+	position: absolute;
+	flex-flow: row nowrap;
+}
+.bg-controller {
+	height: inherit;
+	justify-content: space-between;
+}
+.bg-select-container {
+	height: auto;
+	justify-content: flex-end;
+}
+.bg-prev,
+.bg-next {
+	width: 10%;
+	height: inherit;
+	color: white;
+	background-color: rgb(34, 34, 34);
+	opacity: 0.3;
+	font-size: 2rem;
+	cursor: pointer;
+}
+.bg-next::after,
+.bg-prev::after {
+	display: table-cell;
+	width: inherit;
+	height: inherit;
+	text-align: center;
+	vertical-align: middle;
+}
+.bg-prev::after {
+	content: '◀';
+}
+.bg-next::after {
+	content: '▶';
+}
+.bg-prev:hover,
+.bg-next:hover {
+	opacity: 0.7;
+}
+.bg-select {
+	height: inherit;
+	margin: 0 .1rem;
+	color: #999999;
+	opacity: 0.7;
+	text-align: center;
+	font-size: 1.67rem;
+	cursor: pointer;
+}
+.bg-select::after {
+	content: '○';
+}
+.bg-select.current::after {
+	content: '●';
+}
+.bg-select:hover {
+	opacity: 0.9;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #666666;
+}
